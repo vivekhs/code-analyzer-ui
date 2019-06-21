@@ -1,0 +1,26 @@
+.ptb-1{
+    padding-top: 1rem;
+    padding-bottom: 1rem;  
+}
+.ptb-2{
+    padding-top: 2rem;
+    padding-bottom: 2rem;  
+}
+.ptb-3{
+    padding-top: 3rem;
+    padding-bottom: 3rem;  
+}
+.vs-pt-2{
+    padding-top: 2rem;
+}
+a:focus {
+    box-shadow:none !important;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to right, #eecda3, #ef629f);
+}
+button:focus {
+    outline: none;
+  }

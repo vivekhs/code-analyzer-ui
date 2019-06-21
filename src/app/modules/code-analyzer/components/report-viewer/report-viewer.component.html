@@ -1,0 +1,29 @@
+<div class="row vs-pt-2">
+  <div *ngIf="analysisReports && analysisReports.length" class="col-sm-12 text-center pb-2 h6 report-heading">
+      Analysis Report
+  </div>
+  <mat-accordion *ngFor="let analysisReport of analysisReports" class="col-sm-12">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  {{analysisReport.qualifier}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+        
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Bug Type</th>
+                  <th>Severity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td>{{analysisReport.kind}}</td>
+                <td>{{analysisReport.bug_type}}</td>
+                <td>{{analysisReport.severity}}</td>
+              </tbody>
+            </table>
+          </mat-expansion-panel>
+  </mat-accordion>
+</div>

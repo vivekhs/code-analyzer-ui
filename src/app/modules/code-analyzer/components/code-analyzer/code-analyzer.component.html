@@ -1,0 +1,35 @@
+
+
+<div class="container code-analyzer">
+    <mat-card class="col-sm-12"> 
+        <mat-card-content>
+            <div class="row">
+                <mat-form-field class="col-sm-3">
+                    <mat-label>Modes</mat-label>
+                    <mat-select (ngModelChange)="reset()" [(ngModel)]="selectedMode" name="selectedMode">
+                      <mat-option *ngFor="let mode of modes" [value]="mode.value">
+                        {{mode.description}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                <mat-form-field *ngIf="selectedMode === 'CODE_EDITOR'" class="col-sm-3">
+                    <mat-label>Language</mat-label>
+                    <mat-select [(ngModel)]="selectedLanguage" name="selectedLanguage">
+                      <mat-option *ngFor="let languageConfig of supportedLanguages" [value]="languageConfig.value">
+                        {{languageConfig.description}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field *ngIf="selectedMode === 'CODE_EDITOR'" class="col-sm-3">
+                      <input name="fileName" [(ngModel)]="fileName" type="text" matInput placeholder="File name">
+                  </mat-form-field>
+                  <div *ngIf="selectedMode" class="col-sm-3">
+                      <button (click)="analyseCode()" class="w-100" type="button" mat-flat-button color="accent">Analyze</button>
+                  </div>
+            </div>
+            <input *ngIf="selectedMode === 'CODE_UPLOADER'"  type="file" ng2FileSelect [uploader]="uploader" />
+            <ngx-monaco-editor *ngIf="selectedMode === 'CODE_EDITOR'" [options]="editorOptions" [(ngModel)]="code"></ngx-monaco-editor>
+            <app-report-viewer [analysisReports]="analysisReports"></app-report-viewer>
+          </mat-card-content>
+      </mat-card>
+</div>

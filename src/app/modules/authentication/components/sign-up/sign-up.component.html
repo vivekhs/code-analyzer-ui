@@ -1,0 +1,29 @@
+<div class="row sign-up">
+  <mat-card class="col-sm-3 p-4"> 
+          <div class="brand-label">VS Code Analyzer</div>
+      <mat-card-content>
+          <form (ngSubmit)="signUp()" class="row sign-up__form">
+              <mat-form-field class="col-sm-12">
+                <input name="userId" [(ngModel)]="signUpInfo.userId" type="text" matInput placeholder="Username">
+              </mat-form-field>
+              <mat-form-field class="col-sm-12">
+                <input name="firstName" [(ngModel)]="signUpInfo.firstName" type="text" matInput placeholder="First Name">
+              </mat-form-field>
+              <mat-form-field class="col-sm-12">
+                <input name="lastName" [(ngModel)]="signUpInfo.lastName" type="text" matInput placeholder="Last Name">
+              </mat-form-field>
+            
+              
+              <mat-form-field class="col-sm-12">
+                  <input name="password" type="password" [(ngModel)]="signUpInfo.password" matInput placeholder="Password">
+              </mat-form-field>
+              <div class="col-sm-12">
+                  <button class="w-100" type="submit" mat-flat-button color="accent">SIGN UP</button>
+              </div>
+              
+            </form>
+            <div class="sign-in"><span class="question">Already have an account?&nbsp;</span><span (click)="signIn()" class="sign-in__action">SIGN IN</span></div>
+      </mat-card-content>
+    </mat-card>
+
+</div>
